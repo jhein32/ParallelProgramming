@@ -21,7 +21,7 @@ int main()
   double start_time = omp_get_wtime();
 #endif
     
-#pragma omp parallel default(none) shared(pi_square) \
+#pragma omp parallel default(none) shared(pi_square, finval) \
   private(thread_id, thread_num, local_pi, my_num, my_first, my_last)
   {
     thread_id  = omp_get_thread_num();
