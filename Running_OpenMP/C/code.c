@@ -28,7 +28,7 @@ int main()
     thread_num = omp_get_num_threads();
 
     if (thread_id == 0)
-    printf("Using %i threads.\n", thread_num);
+    printf("Using %i threads\n", thread_num);
 
 #pragma omp barrier
     my_num   = finval/thread_num;

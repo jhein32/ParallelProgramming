@@ -32,6 +32,12 @@ Program pi
   thread_id  = omp_get_thread_num()
   thread_num = omp_get_num_threads()
 
+  if (thread_id .eq. 0) then
+     print *, "Using", thread_num, " threads"
+  endif
+     
+  !$omp barrier
+  
   my_num   = finval/thread_num
   my_first = 1 + thread_id * my_num
   my_last  = (thread_id + 1) * my_num
